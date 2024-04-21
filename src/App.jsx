@@ -24,6 +24,8 @@ function App() {
   const [nodes, setNodes] = useState(initialNodes); // State hook for managing nodes
   const [edges, setEdges] = useState(initialEdges); // State hook for managing edges
   const [nodeName, setNodeName] = useState("Node 1");// State hook for managing name
+  const [text, setText]= useState();
+  const [connected, setConnected]= useState(false);
 
   const { reactFlowWrapper,
     textRef,
@@ -64,8 +66,8 @@ function App() {
   };
 
   const connectionHandler = () => {
-    if (checkConnection(nodes, edges)) alert("Congrats its correct");
-    else alert("Please connect source nodes (Cannot Save Flow)");
+    if (checkConnection(nodes, edges)){ setText("Congrats its correct"); setConnected(true)}
+    else {setText("Cannot Save Flow"); setConnected(false)};
   };
 
   
@@ -123,9 +125,16 @@ function App() {
 
   return (
     <div className="flex flex-col w-full h-screen">
-      <div className="flex w-full h-[7%] bg-gray-400 p-2 justify-items-end justify-end">
-        <button className="flex items-center justify-centerss px-[12px] py-[1px]  bg-white rounded-md" onClick={connectionHandler}>Save</button>
+      <div className="flex w-full h-[7%] bg-gray-400 p-2 ">
+       <div className="w-2/3  ">
+        {text && <span className={`flex justify-center items-center py-1 text-lg font-bold ${connected?'text-green-400':"text-red-400"}`}>
+          {text?text:""}
+          </span>}
+       </div>
+       <div className="w-1/3 flex justify-items-end justify-end px-2">
+       <button className="flex items-center justify-centers px-[12px] py-[1px]  bg-white rounded-md" onClick={connectionHandler}>Save</button>
 
+       </div>
       </div>
       
       <div className="flex w-full h-full">
