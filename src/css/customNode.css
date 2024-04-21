@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border: 0 solid #bbb;
+    font-size: 10pt;
+    border-radius: 10px;
+  }
+  
+  .node-selected {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  
+  .custom-node-title {
+    position: relative;
+    padding: 8px 32px;
+    flex-grow: 1;
+    background-color: #08c9bd;
+    border-radius: 10px;
+  }
+  
+  .contentWrapper {
+    padding: 8px 0;
+  }
+  
