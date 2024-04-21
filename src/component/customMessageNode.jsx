@@ -6,8 +6,6 @@ import { AiOutlineMessage } from "react-icons/ai";
 
 
 const Node = ({ data, selected }) => {
-//   let customTitle = { ...style.title };
-//   customTitle.backgroundColor = "#08c9bd";
 
   return (
     <div className="flex border-2">
@@ -26,6 +24,3 @@ const Node = ({ data, selected }) => {
 
 export default memo(Node);
 
-//style={style.contentWrapper}
-//style={{ ...style.body, ...(selected ? style.selected : []) }}
-//style={customTitle} 
