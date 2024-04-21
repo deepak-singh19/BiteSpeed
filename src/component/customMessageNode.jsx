@@ -10,7 +10,7 @@ const Node = ({ data, selected }) => {
   return (
     <div className="flex border-2">
       <div className={`${selected?"node-selected":""}`}>
-        <div className="custom-node-title flex flex-row w-full justify-center items-center gap-2 bg-[#25D366]">
+        <div className="custom-node-title flex flex-row w-full justify-center items-center gap-2 bg-[#25D366] px-4 py-2">
           <AiOutlineMessage />
           {data.heading}
           </div>
