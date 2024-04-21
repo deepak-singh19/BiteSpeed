@@ -9,7 +9,7 @@ const SideBar = ({ isSelected, textRef, nodeName, setNodeName }) => {
               event.dataTransfer.effectAllowed = "move";
             };
   return (
-    <div className='flex w-full h-full'>
+    <div className='flex w-full h-full text-blue-400'>
          
         {isSelected ? (
           <EditMessage
@@ -18,9 +18,9 @@ const SideBar = ({ isSelected, textRef, nodeName, setNodeName }) => {
             setNodeName={setNodeName}
           />
         ) : (
-          <div className='flex w-full h-full p-7'>
+          <div className='flex w-full h-full px-3 whitespace-pre-line'>
             <div
-            className="flex flex-col items-center justify-center w-[40%] h-[13%] border "
+            className="flex flex-col items-center justify-center w-[40%] h-[13%] border whitespace-pre-line"
             onDragStart={(event) => onDragStart(event, "message" ,"node")}
             draggable
           >
