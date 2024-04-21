@@ -2,15 +2,20 @@ import React, { memo } from "react";
 import { Handle, Position } from "reactflow";
 import "../css/customNode.css"
 import 'reactflow/dist/style.css';
+import { AiOutlineMessage } from "react-icons/ai";
+
 
 const Node = ({ data, selected }) => {
 //   let customTitle = { ...style.title };
 //   customTitle.backgroundColor = "#08c9bd";
 
   return (
-    <div className="text-updater-node">
+    <div className="flex border-2">
       <div className={`${selected?"node-selected":""}`}>
-        <div className="custom-node-title">{data.heading}</div>
+        <div className="custom-node-title flex flex-row w-full justify-center items-center gap-2 bg-[#25D366]">
+          <AiOutlineMessage />
+          {data.heading}
+          </div>
         <div className="contentWrapper">{data.content}</div>
       </div>
       <Handle type="source" position={Position.Right} id="b" />
